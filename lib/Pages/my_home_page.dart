@@ -56,15 +56,41 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Spacer(),
             const Text(
               'Push the button to roll the dice.',
             ),
-            ElevatedButton(
-              style:
-                  ElevatedButton.styleFrom(backgroundColor: Colors.greenAccent),
-              onPressed: () {},
-              child: const Text("Roll the dice"),
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.greenAccent),
+                        onPressed: () {},
+                        child: const Text("Roll one dice"),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.greenAccent),
+                        onPressed: () {},
+                        child: const Text("Roll two dice"),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.greenAccent),
+                    onPressed: () {},
+                    child: const Text("Roll three dice"),
+                  ),
+                ],
+              ),
             ),
+            Spacer(),
           ],
         ),
       ),

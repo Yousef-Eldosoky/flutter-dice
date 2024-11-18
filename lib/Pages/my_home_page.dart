@@ -1,3 +1,4 @@
+import 'package:dice/Widgets/dice.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -19,6 +20,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int diceNum = 0;
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -54,9 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Spacer(),
+            const SizedBox(
+              height: 10,
+            ),
+            Dice(
+              diceNum: diceNum,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             const Text(
               'Push the button to roll the dice.',
             ),
@@ -70,27 +81,39 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            diceNum = 1;
+                          });
+                        },
                         child: const Text("Roll one dice"),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            diceNum = 2;
+                          });
+                        },
                         child: const Text("Roll two dice"),
                       ),
                     ],
                   ),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.greenAccent),
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        diceNum = 3;
+                      });
+                    },
                     child: const Text("Roll three dice"),
                   ),
                 ],
               ),
             ),
-            Spacer(),
           ],
         ),
       ),

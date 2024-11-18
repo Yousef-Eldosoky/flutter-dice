@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:dice/Widgets/dice.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -19,6 +22,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int? num1;
+
+  void _getRandomNumber() {
+    setState(() {
+      // Use setState to update the state and trigger a UI rebuild
+      num1 = Random().nextInt(6) + 1;
+      print(num1);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -56,7 +69,18 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Spacer(),
+            const SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              height: 300,
+              child: Dice(
+                num: num1,
+              ),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
             const Text(
               'Push the button to roll the dice.',
             ),
@@ -70,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {},
+                        onPressed: _getRandomNumber,
                         child: const Text("Roll one dice"),
                       ),
                       ElevatedButton(
@@ -90,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

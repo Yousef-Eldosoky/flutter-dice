@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dice/Widgets/dice.dart';
 import 'package:flutter/material.dart';
 
@@ -22,15 +20,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int? num1;
-
-  void _getRandomNumber() {
-    setState(() {
-      // Use setState to update the state and trigger a UI rebuild
-      num1 = Random().nextInt(6) + 1;
-      print(num1);
-    });
-  }
+  int diceNum = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -67,19 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             const SizedBox(
-              height: 50,
+              height: 10,
             ),
-            SizedBox(
-              height: 300,
-              child: Dice(
-                num: num1,
-              ),
+            Dice(
+              diceNum: diceNum,
             ),
             const SizedBox(
-              height: 100,
+              height: 20,
             ),
             const Text(
               'Push the button to roll the dice.',
@@ -94,13 +81,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: _getRandomNumber,
+                        onPressed: () {
+                          setState(() {
+                            diceNum = 1;
+                          });
+                        },
                         child: const Text("Roll one dice"),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            diceNum = 2;
+                          });
+                        },
                         child: const Text("Roll two dice"),
                       ),
                     ],
@@ -108,13 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.greenAccent),
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        diceNum = 3;
+                      });
+                    },
                     child: const Text("Roll three dice"),
                   ),
                 ],
               ),
             ),
-            const Spacer(),
           ],
         ),
       ),

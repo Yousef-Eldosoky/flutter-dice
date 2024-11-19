@@ -81,20 +81,28 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {
-                          setState(() {
-                            diceNum = 1;
-                          });
+                        onPressed: () async {
+                          for (var i = 0; i < 10; i++) {
+                            setState(() {
+                              diceNum = 1;
+                            });
+                            await Future.delayed(
+                                const Duration(milliseconds: 100));
+                          }
                         },
                         child: const Text("Roll one dice"),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.greenAccent),
-                        onPressed: () {
-                          setState(() {
-                            diceNum = 2;
-                          });
+                        onPressed: () async {
+                          for (var i = 0; i < 10; i++) {
+                            setState(() {
+                              diceNum = 2;
+                            });
+                            await Future.delayed(
+                                const Duration(milliseconds: 100));
+                          }
                         },
                         child: const Text("Roll two dice"),
                       ),
@@ -104,10 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.greenAccent),
-                    onPressed: () {
-                      setState(() {
-                        diceNum = 3;
-                      });
+                    onPressed: () async {
+                      for (var i = 0; i < 10; i++) {
+                        setState(() {
+                          diceNum = 3;
+                        });
+                        await Future.delayed(const Duration(milliseconds: 100));
+                      }
                     },
                     child: const Text("Roll three dice"),
                   ),

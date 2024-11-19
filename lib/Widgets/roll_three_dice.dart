@@ -8,8 +8,11 @@ class RollThreeDice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 30,
+        ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -27,7 +30,7 @@ class RollThreeDice extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 1,
         ),
         Padding(
           padding: const EdgeInsets.all(10),

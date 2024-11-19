@@ -33,6 +33,25 @@
 
 ---
 
+## Screenshots
+
+<img src="https://i.ibb.co/sjZWLb4/Simulator-Screenshot-i-Phone-15-Pro-2024-11-19-at-07-48-32.png" alt="Home Page" width="300"/>
+
+###
+
+<img src="https://i.ibb.co/JyN48xB/Simulator-Screenshot-i-Phone-15-Pro-2024-11-19-at-07-48-55.png" alt="One dice" width="300"/>
+
+###
+
+<img src="https://i.ibb.co/6XJpdmM/Simulator-Screenshot-i-Phone-15-Pro-2024-11-19-at-07-49-07.png" alt="Two dice" width="300"/>
+
+###
+
+<img src="https://i.ibb.co/zbTD0Dq/Simulator-Screenshot-i-Phone-15-Pro-2024-11-19-at-07-49-21.png" alt="Three dice" width="300"/>
+
+
+---
+
 ## Installation  
 1. Clone this repository:  
    ```bash

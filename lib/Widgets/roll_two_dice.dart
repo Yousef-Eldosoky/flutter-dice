@@ -8,14 +8,18 @@ class RollTwoDice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 10,
+        ),
         Row(
           children: [
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Image(
-                height: 150,
-                image: AssetImage("assets/Dice-${Dice.getRandomNum()}-b.svg.png"),
+                height: 160,
+                image:
+                    AssetImage("assets/Dice-${Dice.getRandomNum()}-b.svg.png"),
               ),
             )
           ],
@@ -25,8 +29,9 @@ class RollTwoDice extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Image(
-                height: 150,
-                image: AssetImage("assets/Dice-${Dice.getRandomNum()}-b.svg.png"),
+                height: 160,
+                image:
+                    AssetImage("assets/Dice-${Dice.getRandomNum()}-b.svg.png"),
               ),
             ),
             const Spacer(),

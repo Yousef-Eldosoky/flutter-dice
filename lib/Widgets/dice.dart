@@ -9,6 +9,7 @@ class Dice extends StatelessWidget {
 
   final int diceNum;
 
+  // get random numbers
   static int getRandomNum() {
     return Random().nextInt(6) + 1;
   }
@@ -19,7 +20,7 @@ class Dice extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: SizedBox(
           height: 400,
-          child: switch (diceNum) {
+          child: switch (diceNum) { // switch to diced how many dice will appear
             1 => Image(
                 image: AssetImage("assets/Dice-${getRandomNum()}-b.svg.png")),
             2 => RollTwoDice(),
